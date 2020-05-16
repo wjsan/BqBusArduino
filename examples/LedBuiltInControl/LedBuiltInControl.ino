@@ -12,7 +12,7 @@
 
 #include "BqBus.h"
 
-BqBus vstudio(1);   //Instance to share 1 register with vstudio application
+BqBus vstudio(1);     //Instance to share 1 register with vstudio application
 
 void setup() {
   // put your setup code here, to run once:
