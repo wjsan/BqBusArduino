@@ -24,5 +24,6 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   pcApp.communicationTask();                      //Performs communication betteen arduino and pcApp application
-  digitalWrite(LED_BUILTIN, pcApp.getReg(0));     //Read register with address zero and write his values on led
+  int cbValue = pcApp.getReg(0);                  //Get value from register address 0 (check box)
+  digitalWrite(LED_BUILTIN, cbValue);             //Write check box value on led
 }
