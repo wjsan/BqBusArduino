@@ -17,7 +17,7 @@ BqBus pcApp(1);      //Instance to share 1 register with pcApp application
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);                               //Initialize serial port
-  pcApp.setBus(Serial);                             //Set serial port used to communicate with pcApp application
+  pcApp.setBus(&Serial);                             //Set serial port used to communicate with pcApp application
   pinMode(LED_BUILTIN, OUTPUT);                     //Configure board default output to control on-board led
 }
 

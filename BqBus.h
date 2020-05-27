@@ -28,7 +28,7 @@ private:
     void processReg(String reg);
 public:
     BqBus(size_t size);
-    void setBus(Stream &bus);
+    void setBus(Stream *bus);
     void communicationTask();
     void setReg(uint16_t address, int value);
     int getReg(uint16_t address);

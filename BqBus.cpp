@@ -33,8 +33,8 @@ BqBus::BqBus(size_t size){
  * 
  * @param bus Stream or Serial instance
  */
-void BqBus::setBus(Stream &bus){
-    this->bus = &bus;
+void BqBus::setBus(Stream *bus){
+    this->bus = bus;
 }
 
 /**
