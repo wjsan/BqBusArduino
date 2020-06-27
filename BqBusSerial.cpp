@@ -1,5 +1,5 @@
 /**
- * @file BqBus.cpp
+ * @file BqBusSerial.cpp
  * @author Wesley José Santos (https://binary-quantum.com)
  * @brief 
  * @version 0.1
@@ -9,14 +9,14 @@
  * 
  */
 
-#include "BqBus.h"
+#include "BqBusSerial.h"
 
 /**
  * @brief Construct a new Bq Bus:: Bq Bus object
  * 
  * @param size regs count
  */
-BqBus::BqBus(size_t size){
+BqBusSerial::BqBusSerial(size_t size){
     this->size = size;
     delete [] this->data;
     delete [] this->dataChanged;
@@ -33,7 +33,7 @@ BqBus::BqBus(size_t size){
  * 
  * @param bus Stream or Serial instance
  */
-void BqBus::setBus(Stream *bus){
+void BqBusSerial::setBus(Stream *bus){
     this->bus = bus;
 }
 
@@ -41,7 +41,7 @@ void BqBus::setBus(Stream *bus){
  * @brief Performs communication beetween devices
  * 
  */
-void BqBus::communicationTask(){
+void BqBusSerial::communicationTask(){
     if(this->bus->available()){
         String reg;
         if (this->idx < size){
@@ -59,7 +59,7 @@ void BqBus::communicationTask(){
  * @param address address of register
  * @param value new value
  */
-void BqBus::setReg(uint16_t address, int value){
+void BqBusSerial::setReg(uint16_t address, int value){
     data[address] = value;
     dataChanged[address] = true;
 }
@@ -70,7 +70,7 @@ void BqBus::setReg(uint16_t address, int value){
  * @param address address of register
  * @return int value of register
  */
-int BqBus::getReg(uint16_t address){
+int BqBusSerial::getReg(uint16_t address){
     return(data[address]);
 }
 
@@ -79,7 +79,7 @@ int BqBus::getReg(uint16_t address){
  * 
  * @param reg register content to be processed
  */
-void BqBus::processReg(String reg){
+void BqBusSerial::processReg(String reg){
     if(!this->dataChanged[idx]){
         this->data[idx] = reg.toInt();
     }

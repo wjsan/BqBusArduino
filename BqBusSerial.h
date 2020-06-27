@@ -1,5 +1,5 @@
 /**
- * @file BqBus.h
+ * @file BqBusSerial.h
  * @author Wesley José Santos (https://binary-quantum.com)
  * @brief 
  * @version 0.1
@@ -9,16 +9,16 @@
  * 
  */
 
-#ifndef __BQBUS__H__
-#define __BQBUS__H__
+#ifndef __BQBUSSERIAL__H__
+#define __BQBUSSERIAL__H__
 
 #include <Stream.h>
 
 /**
- * @brief Class to handle BqBus communication
+ * @brief Class to handle BqBusSerial communication
  * 
  */
-class BqBus
+class BqBusSerial
 {
 private:
     Stream *bus;
@@ -27,11 +27,11 @@ private:
     size_t size, idx;
     void processReg(String reg);
 public:
-    BqBus(size_t size);
+    BqBusSerial(size_t size);
     void setBus(Stream *bus);
     void communicationTask();
     void setReg(uint16_t address, int value);
     int getReg(uint16_t address);
 };
 
-#endif  //!__BQBUS__H__
+#endif  //!__BQBUSSERIAL__H__
