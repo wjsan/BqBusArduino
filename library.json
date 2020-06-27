@@ -1,0 +1,22 @@
+{
+    "name": "BqBusArduino",
+    "keywords": "bqbus, serial, scada, communication",
+    "description": "Arduino Library for BqBus communication protocol",
+    "repository":
+    {
+      "type": "git",
+      "url": "https://github.com/WesleyJoseSantos/BqBusArduino.git"
+    },
+    "authors": 
+    [
+      {
+        "name": "Wesley José Santos",
+        "email": "BINARY_QUANTUM@outlook.com",
+        "url": "http://www.binary-quantum.com",
+        "maintainer": true
+      }
+    ],
+    "version": "1.0.0",
+    "frameworks": "arduino",
+    "platforms": "*"
+  }
